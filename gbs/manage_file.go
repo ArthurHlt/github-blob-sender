@@ -115,6 +115,10 @@ func DownloadFileTo(owner, repo, file, output string) error {
 	if output == "" {
 		output = file
 	}
+	src, err := os.Stat(output)
+	if err == nil && src.IsDir() {
+		output = path.Join(output, file)
+	}
 	blobFile := Config.FindBlobFile(BlobFile{
 		Name: owner + "/" + repo + "/" + file,
 	})
