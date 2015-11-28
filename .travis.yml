@@ -16,3 +16,5 @@ deploy:
   - out/github-blob-sender_windows_amd64.exe
   on:
     repo: ArthurHlt/github-blob-sender
+    tags: true
+    all_branches: true
