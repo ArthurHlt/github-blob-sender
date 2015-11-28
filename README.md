@@ -101,10 +101,10 @@ OPTIONS:
 
 ```
 NAME:
-   ./github-blob-sender download - Download file from github blob
+   github-blob-sender download - Download file from github blob
 
 USAGE:
-   ./github-blob-sender download [command options] [file-name] (Note: file-name can be listed with list command)
+   github-blob-sender download [command options] [file-name] (Note: file-name can be listed with list command)
 
 OPTIONS:
    --github-token, --gt 	Set your github token (optional if already set or GITHUB_TOKEN env var set)
@@ -131,10 +131,10 @@ OPTIONS:
 
 ```
 NAME:
-   ./github-blob-sender list - List registered files
+   github-blob-sender list - List registered files
 
 USAGE:
-   ./github-blob-sender list [command options] [arguments...]
+   github-blob-sender list [command options] [arguments...]
 
 OPTIONS:
    --show-github-sha1, -g	Show github checksum (in sha1)

@@ -6,14 +6,13 @@ after_success:
 deploy:
   provider: releases
   api_key:
-    secure: lHtF3jRpdZAUs3ixHOFrbBOVkw3DfiG4zgqfrjGsX6RF9yoSWFTBTP7Uz/GnXXsIKSmG1t3fVHA68QrYU++7cnyzdk7gIh4iaTEnOwL+PPThmzneDclFt7PrlnkyvQqoKgLynpHsBJinsm4BMXurZBog9pKuKSEilIZmXegTBCD5S/ybmeru6FIy0cmca7QqXZ8fEjZVkfGByNZRkMW3RIMgMfAJrPqbk5Q6bgGtXcr9WpgmUKJl8QmqzdKacU/u3UHM0vmJrXu/EOkhi4HjlYyRmPA6m2/BU44RAFViu/1e+hZLqeZOLHgTm5BHZ4E0pKeAOISro6KotSNYNKCb/dSp5oxjKkmqOIEmRHVn1wbxOIA7xQSeEgMTkaR44ukD+DrvmcNzh+hNhli6ayDsuV/6mpr+I/5vHUtLSFT0YgIXdpEd6aYiDFNoA7H2ikyHLEd+hHLaJDKAJyfs/8qqaLOgj2T9BNXF6vX7gm8US0jGgPHffTvRR8v+siQAZykG7RJ3ixBhRSbGKl7LkjLeoD8PkUYdAggVbax3V1llKIeIIFZMY3uZDAzVx7apFx0q3kK6REh5/hRSd4gXOr+TJCjJKKrbtsAvdgnWQrXSHTGb2eY13Qgn0aQqC/Gjkw7V/UlgGTkTo3g3zfWYvcM9FD7gfqqqs/eajwbkN3ONdLU=
-    file:
-    - out/github-blob-sender_darwin_amd64
-    - out/github-blob-sender_linux_386
-    - out/github-blob-sender_linux_amd64
-    - out/github-blob-sender_linux_arm
-    - out/github-blob-sender_windows_386.exe
-    - out/github-blob-sender_windows_amd64.exe
-    on:
-      tags: true
-      all_branches: true
+    secure: Xlhi926g2KpE+qGAT3RgxKL/NpdNk1mXVT9UEEEXF0rXvGxKhNQqp9kgJeIXq54FsEFPL2EmwXxq3uDLMkCzqlPaESl1icG+c+9BUyzajv9MNSDcEIpvSgAI/kqlUDY3CT7o713j17GJ/CrK+/OMsIb8St9xaONA6EsMTTucEAUM18vsRh6QZJ5gC8cLljKM+x4adNc/vr4kaTy/t7nilMGdm/tAk29ghbd5zLh2AQAVeR0mb8H4Z3lhUoxmpNkFpMtddfO1W/fcLXd8V87y8iaZu/hlziU2Wn0TuGwV3YVGlCNhsv4d3Q4gw+misaEzGc5QMwgO2EIOCoBm+mx7vGNsGw7giloy8rsyI7ENfj9lNp+RWVi2JyzJNgtXG0uNlbP5gUQ9O2Oh8ipJ2Xy/WBlcXq7jO81aJu7By+KprtyJIpCl3jnBl795YE8vvnpzCKY1w0NXuTzr+PR8bC7srKOxIHyzclnzkVVg9fhvrZ/yTBakwscjzVZG4AeiMXjvWNF+lz5YQMOXczPrS8Gqf3aeeyyceLf75zL6yAX9SmwqemXwdzm/S0xksBku2t8T25ZmGNn36ulu30QSCiPhh/DK9hMADQCrWwSJ4BSlvvtp7la6FESz7Ds8gC+ibh1UMVb6QSpnKHhdFhb/OXHnrwW79Zhsoc827L1u+6yORxQ=
+  file:
+  - out/github-blob-sender_darwin_amd64
+  - out/github-blob-sender_linux_386
+  - out/github-blob-sender_linux_amd64
+  - out/github-blob-sender_linux_arm
+  - out/github-blob-sender_windows_386.exe
+  - out/github-blob-sender_windows_amd64.exe
+  on:
+    repo: ArthurHlt/github-blob-sender
