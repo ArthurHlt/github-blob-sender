@@ -27,9 +27,9 @@ func main() {
 	app.Version = "1.0.0"
 	app.Commands = []cli.Command{
 		{
-			Name:      "upload",
-			Aliases:     []string{"u"},
-			Usage:     "Upload file to github blob",
+			Name:      "store",
+			Aliases:     []string{"s"},
+			Usage:     "Store file to github blob",
 			ArgsUsage: "[file1 file2 ...]",
 			Action: upload,
 			Flags: defaultFlags(false),
@@ -43,11 +43,11 @@ func main() {
 			Flags: defaultFlags(true),
 		},
 		{
-			Name:      "download",
-			Aliases:     []string{"d"},
-			Usage:     "Download file from github blob",
+			Name:      "restore",
+			Aliases:     []string{"r"},
+			Usage:     "Restore file from github blob",
 			ArgsUsage: "[file-name] (Note: file-name can be listed with list command)",
-			Action: download,
+			Action: restore,
 			Flags: append(defaultFlags(true), cli.StringFlag{
 				Name:        "output",
 				Value:       "",
@@ -56,11 +56,11 @@ func main() {
 			}),
 		},
 		{
-			Name:      "download-all",
+			Name:      "restore-all",
 			Aliases:     []string{"a"},
 			ArgsUsage: "[folder/to/put/downloaded/file]",
-			Usage:     "Download all registered files in folder from github blob",
-			Action: downloadAll,
+			Usage:     "Restore all registered files in folder from github blob",
+			Action: restoreAll,
 			Flags: []cli.Flag{
 				cli.BoolFlag{
 					Name: "create-folders, create-folder, c",
@@ -121,7 +121,7 @@ func defaultFlags(optional bool) []cli.Flag {
 		},
 	}
 }
-func downloadAll(c *cli.Context) {
+func restoreAll(c *cli.Context) {
 	checkToken()
 	if len(c.Args()) != 1 {
 		checkError(errors.New("You need to pass a folder as first arg."))
@@ -129,7 +129,7 @@ func downloadAll(c *cli.Context) {
 	err := gbs.DownloadAll(c.Args().First(), createFolder)
 	checkError(err)
 }
-func download(c *cli.Context) {
+func restore(c *cli.Context) {
 	checkToken()
 	if len(c.Args()) != 1 {
 		checkError(errors.New("You need to pass one file name."))

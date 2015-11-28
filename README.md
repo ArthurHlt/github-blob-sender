@@ -53,10 +53,10 @@ USAGE:
    github-blob-sender [global options] command [command options] [arguments...]
 
 COMMANDS:
-   upload, u		Upload file to github blob
+   store, s		Store file to github blob
    cat, c		Cat file from github blob
-   download, d		Download file from github blob
-   download-all, a	Download all registered files in folder from github blob
+   restore, r		Restore file from github blob
+   restore-all, a	Restore all registered files in folder from github blob
    list, l		List registered files
    help, h		Shows a list of commands or help for one command
 
@@ -65,14 +65,14 @@ GLOBAL OPTIONS:
    --version, -v	print the version
 ```
 
-### `upload` command
+### `store` command
 
 ```
 NAME:
-   github-blob-sender upload - Upload file to github blob
+   github-blob-sender store - Store file to github blob
 
 USAGE:
-   github-blob-sender upload [command options] [file1 file2 ...]
+   github-blob-sender store [command options] [file1 file2 ...]
 
 OPTIONS:
    --github-token, --gt 	Set your github token (optional if already set or GITHUB_TOKEN env var set)
@@ -97,14 +97,14 @@ OPTIONS:
 
 **TIP**: `owner` and `repo` flags are optional if only one file with this name is registered in `.github-blob-sender` file
 
-### `download` command
+### `restore` command
 
 ```
 NAME:
-   github-blob-sender download - Download file from github blob
+   github-blob-sender restore - Restore file from github blob
 
 USAGE:
-   github-blob-sender download [command options] [file-name] (Note: file-name can be listed with list command)
+   github-blob-sender restore [command options] [file-name] (Note: file-name can be listed with list command)
 
 OPTIONS:
    --github-token, --gt 	Set your github token (optional if already set or GITHUB_TOKEN env var set)
@@ -115,14 +115,14 @@ OPTIONS:
 
 **TIP**: `owner` and `repo` flags are optional if only one file with this name is registered in `.github-blob-sender` file
 
-### `download-all` command
+### `restore-all` command
 
 ```
 NAME:
-   github-blob-sender download-all - Download all registered files in folder from github blob
+   github-blob-sender restore-all - Restore all registered files in folder from github blob
 
 USAGE:
-   github-blob-sender download-all [command options] [folder/to/put/downloaded/file]
+   github-blob-sender restore-all [command options] [folder/to/put/downloaded/file]
 
 OPTIONS:
    --create-folders, --create-folder, -c	Create folders if not exist
