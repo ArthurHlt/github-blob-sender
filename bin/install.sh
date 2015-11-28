@@ -3,6 +3,7 @@ VERSION="1.0.0"
 NAME="github-blob-sender"
 OS=""
 OWNER="ArthurHlt"
+MYTMPDIR=${TMPDIR-/tmp}
 echo "Installing ${NAME}..."
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     OS="linux"
@@ -38,7 +39,7 @@ LINK="https://github.com/${OWNER}/${NAME}/releases/download/v${VERSION}/${FILENA
 if [[ "$OS" == "windows" ]]; then
     FILEOUTPUT="${FILENAME}"
 else
-    FILEOUTPUT="${TMPDIR}/${FILENAME}"
+    FILEOUTPUT="${MYTMPDIR}/${FILENAME}"
 fi
 RESPONSE=200
 if hash curl 2>/dev/null; then
