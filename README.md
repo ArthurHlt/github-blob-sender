@@ -40,6 +40,12 @@ $ go get github.com/ArthurHlt/github-blob-sender
 
 If compile failed you can use godep to restore dependencies:
 
+```bash
+$ go get github.com/tools/godep # if you haven't godep
+$ cd $GOPATH/src/github.com/ArthurHlt/github-blob-sender
+$ godep restore
+$ go get github.com/ArthurHlt/github-blob-sender
+```
 
 ## Usage
 
