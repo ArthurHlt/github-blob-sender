@@ -3,7 +3,9 @@ VERSION="1.0.0"
 NAME="github-blob-sender"
 OS=""
 OWNER="ArthurHlt"
-MYTMPDIR=${TMPDIR-/tmp}
+: "${TMPDIR:=${TMP:-$(CDPATH=/var:/; cd -P tmp)}}"
+cd -- "${TMPDIR:?NO TEMP DIRECTORY FOUND!}" || exit
+cd -
 echo "Installing ${NAME}..."
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     OS="linux"
@@ -39,7 +41,7 @@ LINK="https://github.com/${OWNER}/${NAME}/releases/download/v${VERSION}/${FILENA
 if [[ "$OS" == "windows" ]]; then
     FILEOUTPUT="${FILENAME}"
 else
-    FILEOUTPUT="${MYTMPDIR}/${FILENAME}"
+    FILEOUTPUT="${TMPDIR}/${FILENAME}"
 fi
 RESPONSE=200
 if hash curl 2>/dev/null; then
