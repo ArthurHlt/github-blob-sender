@@ -1,4 +1,4 @@
-# github-blob-sender
+# github-blob-sender [![Build Status](https://travis-ci.org/ArthurHlt/github-blob-sender.svg?branch=master)](https://travis-ci.org/ArthurHlt/github-blob-sender)
 
 Send a file into github blob in command line (written in golang).
 The main goal is to store and restore file (large or medium) in github.
