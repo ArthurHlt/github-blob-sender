@@ -42,7 +42,7 @@ else
 fi
 RESPONSE=200
 if hash curl 2>/dev/null; then
-    RESPONSE=$(curl --write-out %{http_code} -o "${TMPDIR}/${FILENAME}" "$LINK")
+    RESPONSE=$(curl --write-out %{http_code} -L -o "${TMPDIR}/${FILENAME}" "$LINK")
 else
     wget -o "${TMPDIR}/${FILENAME}" "$LINK"
     RESPONSE=$?
