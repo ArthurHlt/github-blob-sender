@@ -16,7 +16,7 @@ type BlobFile struct {
 	InternalSha1 string `json:"internal_sha1"`
 	GithubSha1   string `json:"github_sha1"`
 	Name         string `json:"name"`
-	Link         string `json:"string"`
+	Link         string `json:"link"`
 }
 var CONFIG_FILE = ".github-blob-sender"
 var GITHUB_TOKEN_ENV = "GITHUB_TOKEN"
