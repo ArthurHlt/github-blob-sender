@@ -1,0 +1,19 @@
+language: go
+go:
+- 1.5
+after_success:
+- bin/build-all.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: lHtF3jRpdZAUs3ixHOFrbBOVkw3DfiG4zgqfrjGsX6RF9yoSWFTBTP7Uz/GnXXsIKSmG1t3fVHA68QrYU++7cnyzdk7gIh4iaTEnOwL+PPThmzneDclFt7PrlnkyvQqoKgLynpHsBJinsm4BMXurZBog9pKuKSEilIZmXegTBCD5S/ybmeru6FIy0cmca7QqXZ8fEjZVkfGByNZRkMW3RIMgMfAJrPqbk5Q6bgGtXcr9WpgmUKJl8QmqzdKacU/u3UHM0vmJrXu/EOkhi4HjlYyRmPA6m2/BU44RAFViu/1e+hZLqeZOLHgTm5BHZ4E0pKeAOISro6KotSNYNKCb/dSp5oxjKkmqOIEmRHVn1wbxOIA7xQSeEgMTkaR44ukD+DrvmcNzh+hNhli6ayDsuV/6mpr+I/5vHUtLSFT0YgIXdpEd6aYiDFNoA7H2ikyHLEd+hHLaJDKAJyfs/8qqaLOgj2T9BNXF6vX7gm8US0jGgPHffTvRR8v+siQAZykG7RJ3ixBhRSbGKl7LkjLeoD8PkUYdAggVbax3V1llKIeIIFZMY3uZDAzVx7apFx0q3kK6REh5/hRSd4gXOr+TJCjJKKrbtsAvdgnWQrXSHTGb2eY13Qgn0aQqC/Gjkw7V/UlgGTkTo3g3zfWYvcM9FD7gfqqqs/eajwbkN3ONdLU=
+    file:
+    - out/github-blob-sender_darwin_amd64
+    - out/github-blob-sender_linux_386
+    - out/github-blob-sender_linux_amd64
+    - out/github-blob-sender_linux_arm
+    - out/github-blob-sender_windows_386.exe
+    - out/github-blob-sender_windows_amd64.exe
+    on:
+      tags: true
+      all_branches: true

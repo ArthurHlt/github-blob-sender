@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\nGenerating Binary..."
+
+CURRENTDIR=`pwd`
+
+go build -o $CURRENTDIR/out/github-blob-sender
+
+echo -e "\nFinished"
