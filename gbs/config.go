@@ -31,14 +31,17 @@ func init() {
 	checkError(err)
 	ConfigPath = path.Join(wd, CONFIG_FILE)
 	if _, err := os.Stat(ConfigPath); os.IsNotExist(err) {
-		loadFromEnvVar()
 		Config.save()
+		loadFromEnvVar()
 		return
 	}
 	data, err := ioutil.ReadFile(ConfigPath)
 	checkError(err)
 	err = json.Unmarshal(data, Config)
 	checkError(err)
+	if Config.GetToken() == "" {
+		loadFromEnvVar()
+	}
 }
 func loadFromEnvVar() {
 	token := os.Getenv(GITHUB_TOKEN_ENV)
